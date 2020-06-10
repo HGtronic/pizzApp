@@ -23,7 +23,7 @@
                        min="1"
                        max="100">
             </label>
-            <button class="btn btn-primary float-right" @click="add_to_cart(product)">
+            <button class="btn btn-primary float-right" @click="add_to_cart(product, quantity)">
                 Add to Cart
             </button>
         </div>
@@ -46,11 +46,11 @@
             }
         },
         methods: {
-            add_to_cart(product) {
-                if (this.quantity > 100 || this.quantity < 1) {
+            add_to_cart(product, quantity) {
+                if (quantity > 100 || quantity < 1) {
                     this.$root.showNotification('alert', 'The quantity must be a number between 1 and 100')
                 } else {
-                    this.$root.add_to_cart(product, this.quantity);
+                    this.$store.dispatch('add_to_cart', {product, quantity})
                 }
             }
         }

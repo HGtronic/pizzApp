@@ -2316,7 +2316,7 @@ Object(vee_validate__WEBPACK_IMPORTED_MODULE_2__["extend"])('max', _objectSpread
         _this.$store.dispatch('empty_cart');
 
         _this.showConfirmed = false;
-      }, 5000);
+      }, 10000);
     }
   },
   computed: _objectSpread({
@@ -2523,11 +2523,14 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    add_to_cart: function add_to_cart(product) {
-      if (this.quantity > 100 || this.quantity < 1) {
+    add_to_cart: function add_to_cart(product, quantity) {
+      if (quantity > 100 || quantity < 1) {
         this.$root.showNotification('alert', 'The quantity must be a number between 1 and 100');
       } else {
-        this.$root.add_to_cart(product, this.quantity);
+        this.$store.dispatch('add_to_cart', {
+          product: product,
+          quantity: quantity
+        });
       }
     }
   }
@@ -46593,7 +46596,7 @@ var render = function() {
               staticClass: "btn btn-primary float-right",
               on: {
                 click: function($event) {
-                  return _vm.add_to_cart(_vm.product)
+                  return _vm.add_to_cart(_vm.product, _vm.quantity)
                 }
               }
             },
