@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm navbar-fixed-top">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand  special-font" href="{{ url('/') }}">
             <i class="fas fa-pizza-slice text-danger"></i> {{ config('app.name', 'PizzApp') }}

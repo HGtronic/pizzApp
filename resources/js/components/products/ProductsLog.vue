@@ -1,5 +1,5 @@
 <template>
-    <div class="py-sm-2 mt-4">
+    <div class="py-5 mt-4">
         <h2 class="special-font motto-background">fast. fresh. delicious.</h2>
         <product v-for="(product, index) in products"
                  :key="product.id"

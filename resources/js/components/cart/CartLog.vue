@@ -1,5 +1,5 @@
 <template>
-    <div class="px-4 px-lg-0">
+    <div class="px-4 py-5 px-lg-0">
         <div class="container text-white py-5 text-center"  style="width: 450px; color: white" ref="title">
             <h1 class="display-4 special-font text-bold text-capitalize sc-background">Shopping cart</h1>
         </div>

@@ -44680,7 +44680,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "px-4 px-lg-0" }, [
+  return _c("div", { staticClass: "px-4 py-5 px-lg-0" }, [
     _c(
       "div",
       {
@@ -46534,7 +46534,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "py-sm-2 mt-4" },
+    { staticClass: "py-5 mt-4" },
     [
       _c("h2", { staticClass: "special-font motto-background" }, [
         _vm._v("fast. fresh. delicious.")
