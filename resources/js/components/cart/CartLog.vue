@@ -386,7 +386,7 @@
                 setTimeout(() => {
                     this.$store.dispatch('empty_cart')
                     this.showConfirmed = false
-                }, 5000);
+                }, 10000);
             },
         },
         computed: {
