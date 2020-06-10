@@ -44683,13 +44683,17 @@ var render = function() {
   return _c("div", { staticClass: "px-4 px-lg-0" }, [
     _c(
       "div",
-      { ref: "title", staticClass: "container text-white py-5 text-center" },
+      {
+        ref: "title",
+        staticClass: "container text-white py-5 text-center",
+        staticStyle: { width: "450px", color: "white" }
+      },
       [
         _c(
           "h1",
           {
             staticClass:
-              "display-4 special-font text-danger text-bold text-capitalize"
+              "display-4 special-font text-bold text-capitalize sc-background"
           },
           [_vm._v("Shopping cart")]
         )
@@ -46532,7 +46536,7 @@ var render = function() {
     "div",
     { staticClass: "py-sm-2 mt-4" },
     [
-      _c("h2", { staticClass: "special-font" }, [
+      _c("h2", { staticClass: "special-font motto-background" }, [
         _vm._v("fast. fresh. delicious.")
       ]),
       _vm._v(" "),
@@ -46552,7 +46556,7 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "text-primary special-font",
+              staticClass: "special-font sc-background text-center",
               attrs: { slot: "no-more" },
               slot: "no-more"
             },
@@ -46564,7 +46568,7 @@ var render = function() {
           ),
           _vm._v(" "),
           _c("div", { attrs: { slot: "no-results" }, slot: "no-results" }, [
-            _c("h2", { staticClass: "text-center special-font" }, [
+            _c("h2", { staticClass: "text-center special-font " }, [
               _vm._v("No results...")
             ])
           ])

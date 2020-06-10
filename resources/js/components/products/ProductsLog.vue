@@ -1,6 +1,6 @@
 <template>
     <div class="py-sm-2 mt-4">
-        <h2 class="special-font">fast. fresh. delicious.</h2>
+        <h2 class="special-font motto-background">fast. fresh. delicious.</h2>
         <product v-for="(product, index) in products"
                  :key="product.id"
                  :product="product">
@@ -10,12 +10,12 @@
             class="mt-5 text-center"
             ref="infiniteLoading"
             spinner="waveDots">
-            <div slot="no-more" class="text-primary special-font">
+            <div slot="no-more" class="special-font sc-background text-center">
                 <i class="fas fa-pizza-slice text-danger "/>
                 <p>My favorites on PizzApp</p>
             </div>
             <div slot="no-results">
-                <h2 class="text-center special-font">No results...</h2>
+                <h2 class="text-center special-font ">No results...</h2>
             </div>
         </infinite-loading>
     </div>
