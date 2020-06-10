@@ -189,7 +189,7 @@
       <workItem from="1591793739698" duration="1794000" />
       <workItem from="1591795562735" duration="1794000" />
       <workItem from="1591800784999" duration="1801000" />
-      <workItem from="1591802599737" duration="440000" />
+      <workItem from="1591802599737" duration="1218000" />
     </task>
     <servers />
   </component>
@@ -202,6 +202,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="662" y="354" width="585" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1591804215354">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="662" y="354" width="585" height="396" key="#com.intellij.fileTypes.FileTypeChooser/0.27.1920.1053@0.27.1920.1053" timestamp="1591804215354" />
     <state width="1874" height="278" key="GridCell.Tab.0.bottom" timestamp="1591646512500">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -226,9 +230,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="624" y="253" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1591795747263" />
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1591803031525">
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup" timestamp="1591804166803">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1591803031525" />
+    <state x="623" y="257" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1591804166803" />
   </component>
 </project>
