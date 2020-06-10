@@ -44867,7 +44867,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "Pick your favorite Pizza to get started"
+                                    "Pick your favorite Pizza from the Menu to get started"
                                   )
                                 ]
                               )

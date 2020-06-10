@@ -1,6 +1,6 @@
 <template>
     <div class="px-4 py-5 px-lg-0">
-        <div class="container text-white py-5 text-center"  style="width: 450px; color: white" ref="title">
+        <div class="container text-white py-5 text-center" style="width: 450px; color: white" ref="title">
             <h1 class="display-4 special-font text-bold text-capitalize sc-background">Shopping cart</h1>
         </div>
         <div class="pb-5">
@@ -62,7 +62,7 @@
                                 </tbody>
                             </table>
                             <div class="special-font text-center py-3" v-if="cart_items.length === 0">
-                                <h5 style="text-decoration: underline">Pick your favorite Pizza to get started</h5>
+                                <h5 style="text-decoration: underline">Pick your favorite Pizza from the Menu to get started</h5>
                             </div>
                         </div>
                         <!-- End Shopping cart table -->
