@@ -2309,21 +2309,14 @@ Object(vee_validate__WEBPACK_IMPORTED_MODULE_2__["extend"])('max', _objectSpread
     post: function post() {
       var _this = this;
 
-      axios.post("/post-order", {
-        detail: this.form,
-        products: this.cart_items
-      }).then(function (response) {
-        _this.$refs.title.innerText = '';
-        _this.showConfirmed = true;
-        _this.order = response.data.order;
-        _this.order_cost = response.data.order_cost;
-
-        _this.$root.showNotification('success', 'Order successfully completed.');
-
+      this.$refs.title.innerText = '';
+      this.showConfirmed = true;
+      this.$root.showNotification('success', 'Order successfully completed.');
+      setTimeout(function () {
         _this.$store.dispatch('empty_cart');
-      })["catch"](function (error) {
-        _this.$root.showNotification('error', error.response.data.errors);
-      });
+
+        _this.showConfirmed = false;
+      }, 5000);
     }
   },
   computed: _objectSpread({
@@ -2610,33 +2603,167 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       page: 1,
-      products: []
+      products: [{
+        "id": "1",
+        "price": "19.00",
+        "title": "Romano Margherita (V)",
+        "description": "Mozzarella & Oregano",
+        "image": "Romano Margherita (V).jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "2",
+        "price": "11.95",
+        "title": "BBQ Chicken",
+        "description": "Mozzarella, Chicken Ham, Fresh Green Peppers & BBQ Sauce",
+        "image": "BBQ Chicken.jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "3",
+        "price": "11.95",
+        "title": "Smoky Beef Sausage",
+        "description": "Mozzarella, Spicy Sausage and Fresh Onions",
+        "image": "Smoky Beef Sausage.jpg",
+        "promo": "Top",
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "4",
+        "price": "10.95",
+        "title": "Creamy Veggie (V)",
+        "description": "Green Peppers, Corn, Onions, Black Olives, Cr\xE8me Fra\xEEche, Mozzarella",
+        "image": "Creamy Veggie (V).jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "5",
+        "price": "13.95",
+        "title": "Fiery Zanana (V)",
+        "description": "Fresh Pineapple, Diced Sweet Piquant\xE9 Pepper, Chilli Flakes, Domino's Sauce, Mozzarella",
+        "image": "Fiery Zanana (V).jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "6",
+        "price": "11.95",
+        "title": "Campania (V)",
+        "description": "Mozzarella, Fresh Green Peppers, Mushrooms, Corn, Fresh Tomatoes & Black Olives",
+        "image": "Campania (V).jpg",
+        "promo": "-10%",
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "7",
+        "price": "9.95",
+        "title": "Paprika Chicken",
+        "description": "Mozzarella, Spicy grilled chicken, Red Paprika, Fresh green chilli",
+        "image": "Paprika Chicken.jpg",
+        "promo": "Hot",
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "8",
+        "price": "11.95",
+        "title": "Chicken Hawaiian",
+        "description": "Mozzarella, Chicken Strips, Red Paprika, & Fresh Pineapples",
+        "image": "Chicken Hawaiian.jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "9",
+        "price": "8.95",
+        "title": "Pepperoni & Mushroom",
+        "description": "Mozzarella, Beef Pepperoni & Mushrooms",
+        "image": "Pepperoni & Mushroom.jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "10",
+        "price": "11.90",
+        "title": "Chicken Kebab",
+        "description": "Chicken Kebab, Green Peppers, Onions, Ranch Sauce, Domino's Sauce, Mozzarella",
+        "image": "Chicken Kebab.jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "11",
+        "price": "10.99",
+        "title": "Chicken Foresti\xE8re",
+        "description": "Cr\xE8me Fraiche, Mozzarella, Smoked Chicken Strips & Mushrooms",
+        "image": "Chicken Foresti\xE8re.jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "12",
+        "price": "14.95",
+        "title": "Chicken Extravaganza",
+        "description": "Mozzarella, Smoked & Grilled Chicken Strips, Chicken Ham, Green Peppers & Mushrooms",
+        "image": "Chicken Extravaganza.jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "13",
+        "price": "8.99",
+        "title": "Meat Extravaganza",
+        "description": "Mozzarella, Beef Pepperoni, Smoky Beef Sausage, Fresh Onions, Green Peppers & Mushrooms",
+        "image": "Meat Extravaganza.jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }, {
+        "id": "14",
+        "price": "9.99",
+        "title": "Quattro Formaggio (V)",
+        "description": "Cheddar, Feta, Goat Cheese, Italian Seasonings, Domino's Sauce, Mozzarella",
+        "image": "Quattro Formaggio (V).jpg",
+        "promo": null,
+        "created_at": "2020-06-08 21:06:50",
+        "updated_at": "2020-06-08 21:07:01",
+        "deleted_at": null
+      }]
     };
   },
-  methods: {
-    infiniteHandler: function infiniteHandler($state) {
-      var _this = this;
-
-      axios.get("/get-products", {
-        params: {
-          page: this.page
-        }
-      }).then(function (_ref) {
-        var data = _ref.data;
-        _this.total = data.products.total;
-
-        if (data.products.data.length) {
-          _this.page += 1;
-          _this.products = _this.products.concat(data.products.data);
-          $state.loaded();
-        } else {
-          $state.complete();
-        }
-      });
-    }
+  methods: {// infiniteHandler($state) {
+    //     axios.get("/get-products", {
+    //         params: {
+    //             page: this.page,
+    //         },
+    //     }).then(({data}) => {
+    //         this.total = data.products.total;
+    //         if (data.products.data.length) {
+    //             this.page += 1;
+    //           //  this.products = this.products.concat(data.products.data);
+    //             $state.loaded();
+    //         } else {
+    //             $state.complete();
+    //         }
+    //     });
+    // },
   },
-  mounted: function mounted() {
-    this.infiniteHandler();
+  mounted: function mounted() {//    this.infiniteHandler();
   }
 });
 
@@ -44867,7 +44994,7 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "Pick your favorite Pizza from the Menu to get started"
+                                    "Pick your favorite Pizza from the Menu to get\n                                started"
                                   )
                                 ]
                               )
@@ -45625,13 +45752,13 @@ var render = function() {
                                                         "\n                                                            Purchased Item:\n                                                            "
                                                       ),
                                                       _vm._l(
-                                                        _vm.order,
+                                                        _vm.cart_items,
                                                         function(ord) {
                                                           return _c("div", [
                                                             _vm._v(
                                                               "\n                                                                " +
                                                                 _vm._s(
-                                                                  ord.product_name
+                                                                  ord.title
                                                                 ) +
                                                                 "\n                                                                - " +
                                                                 _vm._s(
@@ -45663,21 +45790,23 @@ var render = function() {
                                                         align: "left"
                                                       }
                                                     },
-                                                    _vm._l(_vm.order, function(
-                                                      ord
-                                                    ) {
-                                                      return _c("div", [
-                                                        _vm._v(
-                                                          "\n                                                                $" +
-                                                            _vm._s(
-                                                              ord.total.toFixed(
-                                                                2
-                                                              )
-                                                            ) +
-                                                            "\n                                                            "
-                                                        )
-                                                      ])
-                                                    }),
+                                                    _vm._l(
+                                                      _vm.cart_items,
+                                                      function(ord) {
+                                                        return _c("div", [
+                                                          _vm._v(
+                                                            "\n                                                                $" +
+                                                              _vm._s(
+                                                                (
+                                                                  ord.price *
+                                                                  ord.quantity
+                                                                ).toFixed(2)
+                                                              ) +
+                                                              "\n                                                            "
+                                                          )
+                                                        ])
+                                                      }
+                                                    ),
                                                     0
                                                   )
                                                 ]),
@@ -45726,7 +45855,7 @@ var render = function() {
                                                       _vm._v(
                                                         "\n                                                            " +
                                                           _vm._s(
-                                                            _vm.order_cost > 30
+                                                            _vm.subTotal >= 30
                                                               ? "Free"
                                                               : "$9.99"
                                                           ) +
@@ -45812,16 +45941,9 @@ var render = function() {
                                                     },
                                                     [
                                                       _vm._v(
-                                                        "\n                                                            $" +
+                                                        "\n                                                            " +
                                                           _vm._s(
-                                                            _vm.order_cost > 30
-                                                              ? _vm.order_cost.toFixed(
-                                                                  2
-                                                                )
-                                                              : (
-                                                                  _vm.order_cost +
-                                                                  _vm.delivery_cost
-                                                                ).toFixed(2)
+                                                            _vm.totalCost
                                                           ) +
                                                           "\n                                                        "
                                                       )
@@ -45945,12 +46067,12 @@ var render = function() {
                                                             _vm._v(
                                                               "\n                                                                    " +
                                                                 _vm._s(
-                                                                  _vm.order[0]
+                                                                  this.form
                                                                     .first_name
                                                                 ) +
                                                                 "\n                                                                    " +
                                                                 _vm._s(
-                                                                  _vm.order[0]
+                                                                  this.form
                                                                     .last_name
                                                                 ) +
                                                                 "\n                                                                    "
@@ -45959,7 +46081,7 @@ var render = function() {
                                                             _vm._v(
                                                               "\n                                                                    " +
                                                                 _vm._s(
-                                                                  _vm.order[0]
+                                                                  this.form
                                                                     .address
                                                                 ) +
                                                                 "\n                                                                    "
@@ -45968,8 +46090,7 @@ var render = function() {
                                                             _vm._v(
                                                               "\n                                                                    " +
                                                                 _vm._s(
-                                                                  _vm.order[0]
-                                                                    .city
+                                                                  this.form.city
                                                                 ) +
                                                                 "\n                                                                "
                                                             )
@@ -46542,38 +46663,7 @@ var render = function() {
       _vm._v(" "),
       _vm._l(_vm.products, function(product, index) {
         return _c("product", { key: product.id, attrs: { product: product } })
-      }),
-      _vm._v(" "),
-      _c(
-        "infinite-loading",
-        {
-          ref: "infiniteLoading",
-          staticClass: "mt-5 text-center",
-          attrs: { spinner: "waveDots" },
-          on: { infinite: _vm.infiniteHandler }
-        },
-        [
-          _c(
-            "div",
-            {
-              staticClass: "special-font sc-background text-center",
-              attrs: { slot: "no-more" },
-              slot: "no-more"
-            },
-            [
-              _c("i", { staticClass: "fas fa-pizza-slice text-danger " }),
-              _vm._v(" "),
-              _c("p", [_vm._v("My favorites on PizzApp")])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { attrs: { slot: "no-results" }, slot: "no-results" }, [
-            _c("h2", { staticClass: "text-center special-font " }, [
-              _vm._v("No results...")
-            ])
-          ])
-        ]
-      )
+      })
     ],
     2
   )

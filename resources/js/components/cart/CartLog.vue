@@ -62,7 +62,8 @@
                                 </tbody>
                             </table>
                             <div class="special-font text-center py-3" v-if="cart_items.length === 0">
-                                <h5 style="text-decoration: underline">Pick your favorite Pizza from the Menu to get started</h5>
+                                <h5 style="text-decoration: underline">Pick your favorite Pizza from the Menu to get
+                                    started</h5>
                             </div>
                         </div>
                         <!-- End Shopping cart table -->
@@ -238,15 +239,15 @@
                                                             <td width="75%" align="left"
                                                                 style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
                                                                 Purchased Item:
-                                                                <div v-for="ord in order">
-                                                                    {{ ord.product_name }}
+                                                                <div v-for="ord in cart_items">
+                                                                    {{ ord.title }}
                                                                     - {{ ord.quantity }}X
                                                                 </div>
                                                             </td>
                                                             <td width="25%" align="left"
                                                                 style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 15px 10px 5px 10px;">
-                                                                <div v-for="ord in order">
-                                                                    ${{ (ord.total).toFixed(2) }}
+                                                                <div v-for="ord in cart_items">
+                                                                    ${{ (ord.price * ord.quantity).toFixed(2) }}
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -257,7 +258,7 @@
                                                             </td>
                                                             <td width="25%" align="left"
                                                                 style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px; padding: 5px 10px;">
-                                                                {{ order_cost > 30 ? 'Free' : '$9.99' }}
+                                                                {{ subTotal >= 30 ? 'Free' : '$9.99' }}
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -273,8 +274,7 @@
                                                             </td>
                                                             <td width="25%" align="left"
                                                                 style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 800; line-height: 24px; padding: 10px; border-top: 3px solid #eeeeee; border-bottom: 3px solid #eeeeee;">
-                                                                ${{ order_cost > 30 ? (order_cost).toFixed(2) :
-                                                                (order_cost + delivery_cost).toFixed(2) }}
+                                                                {{ totalCost }}
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -299,12 +299,12 @@
                                                                     style="font-family: Open Sans, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 24px;">
                                                                     <p style="font-weight: 800;">Delivery Address</p>
                                                                     <p>
-                                                                        {{ order[0].first_name }}
-                                                                        {{ order[0].last_name }}
+                                                                        {{ this.form.first_name }}
+                                                                        {{ this.form.last_name }}
                                                                         <br>
-                                                                        {{ order[0].address }}
+                                                                        {{ this.form.address }}
                                                                         <br>
-                                                                        {{ order[0].city }}
+                                                                        {{ this.form.city }}
                                                                     </p>
                                                                 </td>
                                                             </tr>
@@ -379,19 +379,14 @@
                 found.quantity = quantity;
             },
             post() {
-                axios.post("/post-order", {
-                    detail: this.form,
-                    products: this.cart_items
-                }).then(response => {
-                    this.$refs.title.innerText = ''
-                    this.showConfirmed = true
-                    this.order = response.data.order
-                    this.order_cost = response.data.order_cost
-                    this.$root.showNotification('success', 'Order successfully completed.')
+                this.$refs.title.innerText = ''
+                this.showConfirmed = true
+                this.$root.showNotification('success', 'Order successfully completed.')
+
+                setTimeout(() => {
                     this.$store.dispatch('empty_cart')
-                }).catch(error => {
-                    this.$root.showNotification('error', error.response.data.errors)
-                });
+                    this.showConfirmed = false
+                }, 5000);
             },
         },
         computed: {
