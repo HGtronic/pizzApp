@@ -67,14 +67,11 @@ const app = new Vue({
         cart_items() {
             return store.state.cart_items
         },
-        cart_items_count(quantity) {
+        cart_items_count() {
             return store.state.cart_items_count
         }
     },
     methods: {
-        add_to_cart(product, quantity) {
-            store.dispatch('add_to_cart', {product, quantity})
-        },
         remove_from_cart(product) {
             store.dispatch('remove_from_cart', product)
             store.commit('decrement_cart_items_count', product.quantity)

@@ -60042,17 +60042,11 @@ var app = new Vue({
     cart_items: function cart_items() {
       return _store_index__WEBPACK_IMPORTED_MODULE_1__["default"].state.cart_items;
     },
-    cart_items_count: function cart_items_count(quantity) {
+    cart_items_count: function cart_items_count() {
       return _store_index__WEBPACK_IMPORTED_MODULE_1__["default"].state.cart_items_count;
     }
   },
   methods: {
-    add_to_cart: function add_to_cart(product, quantity) {
-      _store_index__WEBPACK_IMPORTED_MODULE_1__["default"].dispatch('add_to_cart', {
-        product: product,
-        quantity: quantity
-      });
-    },
     remove_from_cart: function remove_from_cart(product) {
       _store_index__WEBPACK_IMPORTED_MODULE_1__["default"].dispatch('remove_from_cart', product);
       _store_index__WEBPACK_IMPORTED_MODULE_1__["default"].commit('decrement_cart_items_count', product.quantity);
