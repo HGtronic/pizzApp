@@ -20,7 +20,8 @@
                 type: Object,
                 required: true,
             }
-        }, methods: {
+        },
+        methods: {
             close: function () {
                 this.$emit('close');
             }
